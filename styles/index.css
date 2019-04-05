@@ -8,7 +8,10 @@ html, body {
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  position: relative; }
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; }
 
 a {
   color: black;
@@ -18,9 +21,6 @@ body {
   background: black url(h3.png) no-repeat center center;
   background-attachment: fixed;
   background-size: cover; }
-  @supports (-webkit-overflow-scrolling: touch) {
-    body {
-      background-attachment: scroll; } }
 
 .root {
   width: 100vw;
