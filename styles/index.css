@@ -100,11 +100,14 @@ body {
 
 .root > article {
   width: 100vw;
+  min-height: 100vh;
   padding: 1.2rem; }
   @media (min-width: 44em) and (min-height: 44em) {
     .root > article {
-      height: 100vh;
-      padding: calc(4rem + 1.2rem) 1.2rem calc(10rem + 1.2rem); } }
+      padding: calc(4rem + 1.2rem) 1.2rem calc(10rem + 1.2rem);
+      display: flex;
+      justify-content: center;
+      align-items: center; } }
   @media (min-width: 44em) and (min-height: 44em) {
     .root > article .branches {
       min-height: 100%;
