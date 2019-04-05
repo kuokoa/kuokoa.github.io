@@ -85,6 +85,7 @@ body > footer {
 body > article {
   width: 100vw;
   background: url(h3.png) no-repeat center center;
+  background-attachment: fixed;
   background-size: cover;
   padding: 1.2rem; }
   @media (min-width: 44em) {
@@ -214,8 +215,10 @@ body > footer {
     body > footer aside.external {
       justify-content: flex-start; }
       body > footer aside.external img {
-        opacity: .35;
+        opacity: .5;
         height: 2.4rem; }
+      body > footer aside.external .kii {
+        width: 100%; }
       body > footer aside.external .linkedin, body > footer aside.external .github {
         height: 0;
         width: 2.4rem;
@@ -237,30 +240,28 @@ body > footer {
       font-size: 0.8rem;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      opacity: .35; }
+      align-items: center; }
       @media (min-width: 44em) {
         body > footer aside.meta {
           flex: auto;
-          flex-direction: row;
           justify-content: flex-end;
+          align-items: flex-end;
           padding-left: 1.2rem; } }
       body > footer aside.meta p {
-        margin: 0; }
+        margin: 0;
+        opacity: .5; }
       body > footer aside.meta .location {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
-        align-items: center;
-        margin-top: 0.6rem; }
+        align-items: center; }
         @media (min-width: 44em) {
           body > footer aside.meta .location {
-            margin-top: 0;
             margin-left: 1.2rem; } }
         body > footer aside.meta .location img {
           opacity: 1;
-          height: 0.8rem;
-          margin-right: 0.6rem; }
+          height: 1.2rem;
+          margin: 0.6rem 0; }
           @media (min-width: 44em) {
             body > footer aside.meta .location img {
               margin-right: 1.2rem; } }
