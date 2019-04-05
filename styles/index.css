@@ -14,47 +14,61 @@ a {
   color: black;
   text-decoration: none; }
 
-@media (min-width: 44em) {
-  body > header,
-  body > footer {
+body {
+  background: black url(h3.png) no-repeat center center;
+  background-attachment: fixed;
+  background-size: cover; }
+  @supports (-webkit-overflow-scrolling: touch) {
+    body {
+      background-attachment: scroll; } }
+
+.root {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll; }
+
+@media (min-width: 44em) and (min-height: 44em) {
+  .root > header,
+  .root > footer {
     position: absolute;
     left: 0;
     right: 0;
     z-index: 1; } }
 
-body > header {
+.root > header {
   display: flex;
   flex-direction: column;
   justify-content: stretch;
   text-transform: uppercase;
   transition: all .25s ease-in;
   background: black; }
-  @media (min-width: 44em) {
-    body > header {
+  @media (min-width: 44em) and (min-height: 44em) {
+    .root > header {
       top: 0;
       bottom: auto;
       flex-direction: row;
       justify-content: flex-start; } }
-  body > header h1 {
+  .root > header h1 {
     display: flex;
     justify-content: center;
     margin: 0;
     padding: 1rem 1.25rem;
     padding-top: 2rem; }
-    @media (min-width: 44em) {
-      body > header h1 {
+    @media (min-width: 44em) and (min-height: 44em) {
+      .root > header h1 {
         padding-top: 1rem;
         justify-content: flex-start;
         flex: auto; } }
-    body > header h1 img {
+    .root > header h1 img {
       display: block;
       height: 2rem; }
-  body > header menu {
+  .root > header menu {
     display: flex;
     flex-direction: row;
     margin: 0;
     padding: 0; }
-    body > header menu a {
+    .root > header menu a {
       font-size: 1.2rem;
       flex: auto;
       text-align: right;
@@ -65,41 +79,34 @@ body > header {
       height: 4rem;
       line-height: 2rem;
       transition: all .2s ease-in; }
-      body > header menu a:last-child {
+      .root > header menu a:last-child {
         text-align: left; }
-      body > header menu a:hover {
+      .root > header menu a:hover {
         background: white;
         color: black; }
-  @media (min-width: 44em) {
-    body > header {
+  @media (min-width: 44em) and (min-height: 44em) {
+    .root > header {
       background: rgba(0, 0, 0, 0.5); } }
-  body > header a {
+  .root > header a {
     opacity: .5; }
-  body > header:hover {
+  .root > header:hover {
     background: black; }
-    body > header:hover a {
+    .root > header:hover a {
       opacity: 1; }
 
-body > footer {
+.root > footer {
   bottom: 0;
   top: auto; }
 
-body > article {
+.root > article {
   width: 100vw;
-  background: black url(h3.png) no-repeat center center;
-  background-attachment: fixed;
-  background-size: cover;
   padding: 1.2rem; }
-  @supports (-webkit-overflow-scrolling: touch) {
-    body > article {
-      background-attachment: scroll; } }
-  @media (min-width: 44em) {
-    body > article {
+  @media (min-width: 44em) and (min-height: 44em) {
+    .root > article {
       height: 100vh;
-      overflow: auto;
       padding: calc(4rem + 1.2rem) 1.2rem calc(10rem + 1.2rem); } }
-  @media (min-width: 44em) {
-    body > article .branches {
+  @media (min-width: 44em) and (min-height: 44em) {
+    .root > article .branches {
       min-height: 100%;
       display: grid;
       justify-items: center;
@@ -107,35 +114,35 @@ body > article {
       grid-gap: 1.2rem 1.2rem;
       grid-template-rows: repeat(2, 1fr);
       grid-template-columns: repeat(2, 1fr); } }
-  body > article .branches .branch {
+  .root > article .branches .branch {
     text-align: center;
     max-width: 26rem;
     margin: 0 auto 1.2rem auto; }
-    body > article .branches .branch:last-child {
+    .root > article .branches .branch:last-child {
       margin-bottom: 0; }
-    @media (min-width: 44em) {
-      body > article .branches .branch {
+    @media (min-width: 44em) and (min-height: 44em) {
+      .root > article .branches .branch {
         margin: 0; } }
-    body > article .branches .branch > section {
+    .root > article .branches .branch > section {
       min-height: 14rem;
       background: rgba(255, 255, 255, 0.95);
       color: black;
       padding: 1.2rem 1.2rem; }
-      body > article .branches .branch > section h2 {
+      .root > article .branches .branch > section h2 {
         font-size: 3.6rem;
         letter-spacing: -.05em;
         font-weight: 400;
         text-transform: uppercase;
         margin: 0;
         line-height: 1.5; }
-      body > article .branches .branch > section p {
+      .root > article .branches .branch > section p {
         text-align: center;
         font-size: 1.2rem;
         line-height: 1.5;
         margin: 0;
         margin-bottom: 1.2rem;
         padding: 0 1.2rem; }
-      body > article .branches .branch > section ul {
+      .root > article .branches .branch > section ul {
         border-top: 1px solid #eee;
         list-style: none;
         text-transform: uppercase;
@@ -144,54 +151,54 @@ body > article {
         flex-direction: column;
         margin: 0;
         padding: 1.2rem 1.2rem 0; }
-        body > article .branches .branch > section ul li {
+        .root > article .branches .branch > section ul li {
           color: #bbb;
           font-style: italic;
           padding: 0 1.2rem 1.2rem;
           line-height: 1.2; }
-          body > article .branches .branch > section ul li a {
+          .root > article .branches .branch > section ul li a {
             transition: all .2s ease-in;
             color: #444;
             font-style: normal;
             font-weight: 500; }
-    @media (min-width: 44em) {
-      body > article .branches .branch.design {
+    @media (min-width: 44em) and (min-height: 44em) {
+      .root > article .branches .branch.design {
         justify-self: end;
         align-self: end; }
-        body > article .branches .branch.design > section {
+        .root > article .branches .branch.design > section {
           border-top-right-radius: 3.6rem;
           border-bottom-left-radius: 3.6rem; } }
-    body > article .branches .branch.design h2, body > article .branches .branch.design a:hover {
+    .root > article .branches .branch.design h2, .root > article .branches .branch.design a:hover {
       color: #00C1FF; }
-    body > article .branches .branch.studio h2, body > article .branches .branch.studio a:hover {
+    .root > article .branches .branch.studio h2, .root > article .branches .branch.studio a:hover {
       color: #FF0081; }
-    @media (min-width: 44em) {
-      body > article .branches .branch.studio {
+    @media (min-width: 44em) and (min-height: 44em) {
+      .root > article .branches .branch.studio {
         justify-self: start;
         align-self: end; }
-        body > article .branches .branch.studio > section {
+        .root > article .branches .branch.studio > section {
           border-top-left-radius: 3.6rem;
           border-bottom-right-radius: 3.6rem; } }
-    body > article .branches .branch.trade h2, body > article .branches .branch.trade a:hover {
+    .root > article .branches .branch.trade h2, .root > article .branches .branch.trade a:hover {
       color: #FFBE00; }
-    @media (min-width: 44em) {
-      body > article .branches .branch.trade {
+    @media (min-width: 44em) and (min-height: 44em) {
+      .root > article .branches .branch.trade {
         justify-self: end;
         align-self: start; }
-        body > article .branches .branch.trade > section {
+        .root > article .branches .branch.trade > section {
           border-top-left-radius: 3.6rem;
           border-bottom-right-radius: 3.6rem; } }
-    body > article .branches .branch.press h2, body > article .branches .branch.press a:hover {
+    .root > article .branches .branch.press h2, .root > article .branches .branch.press a:hover {
       color: black; }
-    @media (min-width: 44em) {
-      body > article .branches .branch.press {
+    @media (min-width: 44em) and (min-height: 44em) {
+      .root > article .branches .branch.press {
         justify-self: start;
         align-self: start; }
-        body > article .branches .branch.press > section {
+        .root > article .branches .branch.press > section {
           border-top-right-radius: 3.6rem;
           border-bottom-left-radius: 3.6rem; } }
 
-body > footer {
+.root > footer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -200,30 +207,30 @@ body > footer {
   font-size: 0.8rem;
   text-transform: uppercase;
   padding: 1.2rem 3.6rem; }
-  @media (min-width: 44em) {
-    body > footer {
+  @media (min-width: 44em) and (min-height: 44em) {
+    .root > footer {
       flex-direction: row;
       background: linear-gradient(5deg, black, rgba(0, 0, 0, 0.85)); } }
-  body > footer a {
+  .root > footer a {
     color: white;
     display: block;
     padding: 0.3rem 0.6rem;
     text-transform: uppercase; }
-  body > footer aside {
+  .root > footer aside {
     display: block;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 1.2rem 0; }
-    body > footer aside.external {
+    .root > footer aside.external {
       justify-content: flex-start; }
-      body > footer aside.external img {
+      .root > footer aside.external img {
         opacity: .5;
         height: 2.4rem; }
-      body > footer aside.external .kii {
+      .root > footer aside.external .kii {
         width: 100%; }
-      body > footer aside.external .linkedin, body > footer aside.external .github {
+      .root > footer aside.external .linkedin, .root > footer aside.external .github {
         height: 0;
         width: 2.4rem;
         overflow: hidden;
@@ -232,40 +239,40 @@ body > footer {
         background-size: contain;
         opacity: .35;
         transition: all .2s ease-in; }
-        body > footer aside.external .linkedin:hover, body > footer aside.external .github:hover {
+        .root > footer aside.external .linkedin:hover, .root > footer aside.external .github:hover {
           opacity: 1; }
-      body > footer aside.external .linkedin {
+      .root > footer aside.external .linkedin {
         background: url(../linkedin.svg) no-repeat center center;
         background-size: 90% auto; }
-      body > footer aside.external .github {
+      .root > footer aside.external .github {
         background: url(../github.svg) no-repeat center center;
         background-size: 90% auto; }
-    body > footer aside.meta {
+    .root > footer aside.meta {
       font-size: 0.8rem;
       display: flex;
       flex-direction: column;
       align-items: center; }
-      @media (min-width: 44em) {
-        body > footer aside.meta {
+      @media (min-width: 44em) and (min-height: 44em) {
+        .root > footer aside.meta {
           flex: auto;
           justify-content: flex-end;
           align-items: flex-end;
           padding-left: 1.2rem; } }
-      body > footer aside.meta p {
+      .root > footer aside.meta p {
         margin: 0;
         opacity: .5; }
-      body > footer aside.meta .location {
+      .root > footer aside.meta .location {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center; }
-        @media (min-width: 44em) {
-          body > footer aside.meta .location {
+        @media (min-width: 44em) and (min-height: 44em) {
+          .root > footer aside.meta .location {
             margin-left: 1.2rem; } }
-        body > footer aside.meta .location img {
+        .root > footer aside.meta .location img {
           opacity: 1;
           height: 1.2rem;
           margin: 0.6rem 0; }
-          @media (min-width: 44em) {
-            body > footer aside.meta .location img {
+          @media (min-width: 44em) and (min-height: 44em) {
+            .root > footer aside.meta .location img {
               margin-right: 1.2rem; } }
