@@ -77,7 +77,7 @@ body {
       display: block;
       padding: 1rem;
       color: black;
-      font-weight: bold;
+      font-weight: normal;
       height: 4rem;
       line-height: 2rem;
       transition: all .2s ease-in; }
@@ -97,8 +97,7 @@ body {
 
 .root > article {
   width: 100vw;
-  min-height: 100vh;
-  padding: 1.2rem; }
+  min-height: 100vh; }
   @media (min-width: 44em) and (min-height: 44em) {
     .root > article {
       padding: calc(6rem + 1.2rem) 1.2rem calc(12rem + 1.2rem);
@@ -111,33 +110,34 @@ body {
       display: grid;
       justify-items: center;
       align-items: center;
-      grid-gap: 1.2rem 1.2rem;
+      grid-gap: 1.2rem;
       grid-template-rows: repeat(2, 1fr);
       grid-template-columns: repeat(2, 1fr); } }
   .root > article .branches .branch {
     text-align: center;
-    max-width: 26rem;
-    margin: 0 auto 1.2rem auto; }
+    box-sizing: border-box;
+    width: calc(100vw - (1.2rem * 2));
+    margin: 1.2rem; }
     .root > article .branches .branch:last-child {
       margin-bottom: 0; }
     @media (min-width: 44em) and (min-height: 44em) {
       .root > article .branches .branch {
-        margin: 0; } }
+        margin: 0;
+        width: calc(50vw - (1.2rem * 2)); } }
     .root > article .branches .branch > section {
       min-height: 14rem;
-      background: rgba(255, 255, 255, 0.95);
-      color: black;
+      background: black;
+      color: white;
       padding: 1.2rem 1.2rem;
       transition: all .2s ease-in; }
-      .root > article .branches .branch > section:hover {
-        background: white; }
       .root > article .branches .branch > section h2 {
-        font-size: 2rem;
+        font-size: 4rem;
         letter-spacing: -.05em;
         font-weight: 400;
         text-transform: uppercase;
         margin: 0;
-        line-height: 1.5; }
+        line-height: 1.5;
+        transition: all .2s ease-in; }
       .root > article .branches .branch > section p {
         text-align: center;
         font-size: 1.1rem;
@@ -146,7 +146,7 @@ body {
         margin-bottom: 1.2rem;
         padding: 0 1.2rem; }
       .root > article .branches .branch > section ul {
-        border-top: 1px solid #eee;
+        transition: all .2s ease-in;
         list-style: none;
         text-transform: uppercase;
         font-size: 0.8rem;
@@ -154,24 +154,30 @@ body {
         display: flex;
         flex-direction: column;
         margin: 0;
+        margin-bottom: 1.2rem;
         padding: 1.2rem 1.2rem 0; }
         .root > article .branches .branch > section ul li {
-          color: #bbb;
+          color: #444;
+          transition: all .2s ease-in;
           font-style: italic;
           padding: 0 1.2rem 0.6rem;
           line-height: 1.2; }
           .root > article .branches .branch > section ul li a {
             transition: all .2s ease-in;
-            color: rgba(0, 0, 0, 0.5);
+            color: rgba(255, 255, 255, 0.5);
             font-style: normal;
             font-weight: 500; }
+      .root > article .branches .branch > section:hover {
+        background: white;
+        color: black; }
+        .root > article .branches .branch > section:hover ul li {
+          color: #bbb; }
+          .root > article .branches .branch > section:hover ul li a {
+            color: rgba(0, 0, 0, 0.5); }
     @media (min-width: 44em) and (min-height: 44em) {
       .root > article .branches .branch.design {
         justify-self: end;
-        align-self: end; }
-        .root > article .branches .branch.design > section {
-          border-top-right-radius: 8rem;
-          border-bottom-left-radius: 8rem; } }
+        align-self: end; } }
     .root > article .branches .branch.design h2, .root > article .branches .branch.design a:hover {
       color: #00C1FF; }
     .root > article .branches .branch.studio h2, .root > article .branches .branch.studio a:hover {
@@ -179,31 +185,24 @@ body {
     @media (min-width: 44em) and (min-height: 44em) {
       .root > article .branches .branch.studio {
         justify-self: start;
-        align-self: end; }
-        .root > article .branches .branch.studio > section {
-          border-top-left-radius: 8rem;
-          border-bottom-right-radius: 8rem; } }
+        align-self: end; } }
     .root > article .branches .branch.trade h2, .root > article .branches .branch.trade a:hover {
       color: #FFBE00; }
     @media (min-width: 44em) and (min-height: 44em) {
       .root > article .branches .branch.trade {
         justify-self: end;
-        align-self: start; }
-        .root > article .branches .branch.trade > section {
-          border-top-left-radius: 8rem;
-          border-bottom-right-radius: 8rem; } }
+        align-self: start; } }
     .root > article .branches .branch.press h2, .root > article .branches .branch.press a:hover {
+      color: white; }
+    .root > article .branches .branch.press > section:hover h2, .root > article .branches .branch.press > section:hover a:hover {
       color: black; }
     @media (min-width: 44em) and (min-height: 44em) {
       .root > article .branches .branch.press {
         justify-self: start;
-        align-self: start; }
-        .root > article .branches .branch.press > section {
-          border-top-right-radius: 8rem;
-          border-bottom-left-radius: 8rem; } }
+        align-self: start; } }
 
 .root > footer {
-  background: rgba(0, 0, 0, 0.95);
+  background: rgba(0, 0, 0, 0.85);
   color: white;
   font-size: 0.8rem;
   text-transform: uppercase;
