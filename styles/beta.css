@@ -105,12 +105,13 @@ aside.tagline {
     aside.tagline p span {
       background: rgba(0, 0, 0, 0.75);
       color: white;
-      font-size: 2rem;
+      font-size: 1.4rem;
       text-shadow: 0 0 1rem black;
       max-width: 18em;
-      line-height: 1.2;
+      line-height: 1.4;
       font-weight: 400;
       padding: 1rem 2rem;
+      margin-top: -2rem;
       text-align: left; }
       @media (min-width: 44em) and (min-height: 44em) {
         aside.tagline p span {
