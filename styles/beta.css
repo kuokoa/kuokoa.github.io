@@ -20,17 +20,11 @@ a {
 .root {
   height: 100vh;
   position: relative;
-  -webkit-perspective: 1px;
-  perspective: 1px;
   overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: auto; }
+  overflow-y: auto; }
 
 .root > header {
   position: relative;
-  z-index: 100;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -54,7 +48,8 @@ a {
     padding: 3rem 2.5rem 0;
     background: url(/kuokoa.svg) no-repeat center center;
     background-size: contain;
-    flex: 1; }
+    flex: 1;
+    color: transparent; }
     @media (min-width: 44em) and (min-height: 44em) {
       .root > header h1 {
         background-position: left center;
@@ -89,7 +84,8 @@ a {
         color: white; }
 
 aside.tagline {
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   position: relative; }
   aside.tagline > * {
     display: block;
@@ -99,15 +95,10 @@ aside.tagline {
     bottom: 0;
     left: 0; }
   aside.tagline aside {
-    z-index: 1;
     background: black url(/jon_jungle.jpg) no-repeat center center;
-    background-size: cover;
-    transform: translateZ(-4px) scale(5); }
+    background-size: cover; }
   aside.tagline p {
     margin-top: -8rem;
-    z-index: 2;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
     display: flex;
     justify-content: center;
     align-items: center; }
@@ -130,30 +121,42 @@ h2 span {
   display: none; }
 
 .root > article {
-  background: white;
+  background: #eee;
   position: relative;
-  z-index: 2;
-  min-height: 100vh;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0); }
+  min-height: 100vh; }
   @media (min-width: 44em) and (min-height: 44em) {
     .root > article {
       display: flex;
       justify-content: center;
       align-items: center; } }
   .root > article .branches {
-    padding: 1rem; }
+    z-index: 2;
+    padding: 2rem 0;
+    margin: 0 auto;
+    max-width: 64rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
     @media (min-width: 44em) and (min-height: 44em) {
       .root > article .branches {
-        padding: 4rem;
-        display: grid;
-        align-items: center;
-        grid-gap: 2rem;
-        grid-template-rows: repeat(auto-fit, 1fr);
-        grid-template-columns: repeat(2, 1fr); } }
+        padding: 6rem 0; } }
+    .root > article .branches img.aside {
+      z-index: 1;
+      position: relative;
+      width: 75%;
+      height: auto;
+      min-height: 22rem;
+      object-fit: cover; }
+      .root > article .branches img.aside.desktop {
+        align-self: flex-end; }
+      .root > article .branches img.aside.table {
+        align-self: flex-start; }
     .root > article .branches .branch {
+      z-index: 2;
+      position: relative;
       text-align: center;
       box-sizing: border-box;
+      margin: 2rem;
       margin-bottom: 1rem; }
       .root > article .branches .branch:last-child {
         margin-bottom: 0; }
@@ -166,7 +169,13 @@ h2 span {
         color: black;
         padding: 0;
         transition: all .2s ease-in;
-        box-shadow: 0 0 2rem rgba(0, 0, 0, 0.15); }
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15);
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
+        @media (min-width: 44em) and (min-height: 44em) {
+          .root > article .branches .branch > section {
+            align-items: flex-start; } }
         .root > article .branches .branch > section h2 {
           text-align: center;
           font-size: 3rem;
@@ -176,19 +185,20 @@ h2 span {
           margin: 0;
           line-height: 1;
           transition: all .2s ease-in;
-          padding: 2rem 2rem .5rem;
-          background: white;
-          color: black;
-          border-top: .25rem solid black; }
+          width: 100%;
+          padding: 2rem 2rem 0;
+          color: black; }
           @media (min-width: 44em) and (min-height: 44em) {
             .root > article .branches .branch > section h2 {
               text-align: left; } }
         .root > article .branches .branch > section p {
           text-align: center;
-          font-size: 1.2rem;
+          font-weight: 400;
+          font-size: 1.6rem;
           line-height: 1.4;
           margin: 0;
-          padding: 0 2rem 2rem; }
+          padding: 2rem;
+          max-width: 18em; }
           @media (min-width: 44em) and (min-height: 44em) {
             .root > article .branches .branch > section p {
               text-align: left;
@@ -203,48 +213,86 @@ h2 span {
           flex-direction: column;
           margin: 0;
           padding: 0 2rem 2rem; }
+          @media (min-width: 44em) and (min-height: 44em) {
+            .root > article .branches .branch > section ul {
+              flex-direction: row; } }
           .root > article .branches .branch > section ul li {
             color: #bbb;
             transition: all .2s ease-in;
             font-style: italic;
-            padding: 0 1.2rem 0.6rem;
+            padding: 0 2.4rem 0.6rem;
             line-height: 1.2; }
+            @media (min-width: 44em) and (min-height: 44em) {
+              .root > article .branches .branch > section ul li {
+                padding-left: 0; } }
             .root > article .branches .branch > section ul li a {
               transition: all .2s ease-in;
               color: rgba(0, 0, 0, 0.5);
               font-style: normal;
               font-weight: 500; }
-      .root > article .branches .branch.design h2 {
-        color: #00C1FF;
-        border-color: #00C1FF; }
-      .root > article .branches .branch.design a:hover {
-        color: #00C1FF; }
-      .root > article .branches .branch.studio h2 {
-        color: #FF0081;
-        border-color: #FF0081; }
-      .root > article .branches .branch.studio a:hover {
-        color: #FF0081; }
-      .root > article .branches .branch.trade h2 {
-        color: #FFBE00;
-        border-color: #FFBE00; }
-      .root > article .branches .branch.trade a:hover {
-        color: #FFBE00; }
-      .root > article .branches .branch.press a:hover {
-        color: black; }
+      .root > article .branches .branch.design {
+        align-self: flex-start;
+        margin-bottom: -2rem; }
+        @media (min-width: 44em) and (min-height: 44em) {
+          .root > article .branches .branch.design > section {
+            border-bottom-right-radius: 6rem; } }
+        .root > article .branches .branch.design h2 {
+          color: #00C1FF;
+          border-color: #00C1FF; }
+        .root > article .branches .branch.design a:hover {
+          color: #00C1FF; }
+      .root > article .branches .branch.studio {
+        align-self: flex-start;
+        margin-top: -4rem; }
+        @media (min-width: 44em) and (min-height: 44em) {
+          .root > article .branches .branch.studio > section {
+            border-top-right-radius: 6rem; } }
+        .root > article .branches .branch.studio h2 {
+          color: #FF0081;
+          border-color: #FF0081; }
+        .root > article .branches .branch.studio a:hover {
+          color: #FF0081; }
+      .root > article .branches .branch.trade {
+        align-self: flex-end;
+        margin-top: 4rem;
+        margin-bottom: -4rem; }
+        @media (min-width: 44em) and (min-height: 44em) {
+          .root > article .branches .branch.trade > section {
+            border-bottom-left-radius: 6rem; } }
+        .root > article .branches .branch.trade h2 {
+          color: #FFBE00;
+          border-color: #FFBE00; }
+        .root > article .branches .branch.trade a:hover {
+          color: #FFBE00; }
+      .root > article .branches .branch.press {
+        align-self: flex-end;
+        margin-top: -2rem; }
+        @media (min-width: 44em) and (min-height: 44em) {
+          .root > article .branches .branch.press > section {
+            border-top-left-radius: 6rem; } }
+        .root > article .branches .branch.press a:hover {
+          color: black; }
+      @media (min-width: 44em) and (min-height: 44em) {
+        .root > article .branches .branch.trade > section, .root > article .branches .branch.press > section {
+          align-items: flex-end; }
+        .root > article .branches .branch.trade h2, .root > article .branches .branch.trade p, .root > article .branches .branch.press h2, .root > article .branches .branch.press p {
+          text-align: right; }
+        .root > article .branches .branch.trade ul, .root > article .branches .branch.press ul {
+          justify-content: flex-end; }
+          .root > article .branches .branch.trade ul li, .root > article .branches .branch.press ul li {
+            padding-right: 0;
+            padding-left: 2.4rem; } }
 
 .root > footer {
-  height: 100vh;
   position: relative;
   z-index: 10;
   background: black;
   color: white;
   font-size: 2rem;
   text-transform: uppercase;
-  padding: 1.2rem 3.6rem;
-  padding-top: 11.2rem; }
+  padding: 6rem 3.6rem; }
   @media (min-width: 44em) and (min-height: 44em) {
     .root > footer {
-      padding-top: 6.2rem;
       display: flex;
       flex-direction: row;
       flex-direction: row-reverse; } }
@@ -264,7 +312,7 @@ h2 span {
       .root > footer aside.external {
         justify-content: center; } }
     .root > footer aside.external img {
-      height: 8rem; }
+      height: 6rem; }
     .root > footer aside.external .kii {
       width: 100%; }
     .root > footer aside.external .linkedin {
