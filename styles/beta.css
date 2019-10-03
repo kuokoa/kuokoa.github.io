@@ -103,22 +103,29 @@ aside.tagline {
     justify-content: center;
     align-items: center; }
     aside.tagline p span {
+      background: rgba(0, 0, 0, 0.75);
       color: white;
       font-size: 2rem;
       text-shadow: 0 0 1rem black;
       max-width: 18em;
       line-height: 1.2;
       font-weight: 400;
-      padding: 0 1.6rem;
-      text-align: center; }
+      padding: 1rem 2rem;
+      text-align: left; }
       @media (min-width: 44em) and (min-height: 44em) {
         aside.tagline p span {
           font-size: 4vw;
           max-width: 76vw;
           text-align: justify; } }
 
-h2 span {
-  display: none; }
+h2 {
+  position: relative; }
+  h2 span {
+    font-size: .5em;
+    font-weight: 500;
+    line-height: 1;
+    display: block;
+    color: rgba(0, 0, 0, 0.25); }
 
 .root > article {
   background: #eee;
@@ -157,9 +164,7 @@ h2 span {
       text-align: center;
       box-sizing: border-box;
       margin: 2rem;
-      margin-bottom: 1rem; }
-      .root > article .branches .branch:last-child {
-        margin-bottom: 0; }
+      margin-bottom: 0; }
       @media (min-width: 44em) and (min-height: 44em) {
         .root > article .branches .branch {
           margin: 0; } }
@@ -194,20 +199,18 @@ h2 span {
         .root > article .branches .branch > section p {
           text-align: center;
           font-weight: 400;
-          font-size: 1.6rem;
+          font-size: 1.4rem;
           line-height: 1.4;
           margin: 0;
           padding: 2rem;
           max-width: 18em; }
           @media (min-width: 44em) and (min-height: 44em) {
             .root > article .branches .branch > section p {
-              text-align: left;
-              font-size: 1.4rem; } }
+              text-align: left; } }
         .root > article .branches .branch > section ul {
           transition: all .2s ease-in;
           list-style: none;
-          text-transform: uppercase;
-          font-size: 1em;
+          font-size: .8em;
           font-weight: 500;
           display: flex;
           flex-direction: column;
@@ -227,15 +230,15 @@ h2 span {
                 padding-left: 0; } }
             .root > article .branches .branch > section ul li a {
               transition: all .2s ease-in;
-              color: rgba(0, 0, 0, 0.5);
+              color: rgba(0, 0, 0, 0.75);
               font-style: normal;
-              font-weight: 500; }
+              border-bottom: 1px solid rgba(0, 0, 0, 0.25); }
       .root > article .branches .branch.design {
         align-self: flex-start;
         margin-bottom: -2rem; }
         @media (min-width: 44em) and (min-height: 44em) {
           .root > article .branches .branch.design > section {
-            border-bottom-right-radius: 6rem; } }
+            border-bottom-right-radius: 0; } }
         .root > article .branches .branch.design h2 {
           color: #00C1FF;
           border-color: #00C1FF; }
@@ -246,7 +249,7 @@ h2 span {
         margin-top: -4rem; }
         @media (min-width: 44em) and (min-height: 44em) {
           .root > article .branches .branch.studio > section {
-            border-top-right-radius: 6rem; } }
+            border-top-right-radius: 0; } }
         .root > article .branches .branch.studio h2 {
           color: #FF0081;
           border-color: #FF0081; }
@@ -254,11 +257,11 @@ h2 span {
           color: #FF0081; }
       .root > article .branches .branch.trade {
         align-self: flex-end;
-        margin-top: 4rem;
+        margin-top: 2rem;
         margin-bottom: -4rem; }
         @media (min-width: 44em) and (min-height: 44em) {
           .root > article .branches .branch.trade > section {
-            border-bottom-left-radius: 6rem; } }
+            border-bottom-left-radius: 0; } }
         .root > article .branches .branch.trade h2 {
           color: #FFBE00;
           border-color: #FFBE00; }
@@ -269,7 +272,7 @@ h2 span {
         margin-top: -2rem; }
         @media (min-width: 44em) and (min-height: 44em) {
           .root > article .branches .branch.press > section {
-            border-top-left-radius: 6rem; } }
+            border-top-left-radius: 0; } }
         .root > article .branches .branch.press a:hover {
           color: black; }
       @media (min-width: 44em) and (min-height: 44em) {
